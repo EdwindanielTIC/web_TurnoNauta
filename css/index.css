@@ -470,3 +470,96 @@ si hago el widt mas grande, me movera el tiempo hacia abajo*/
     font-size: 50px;
     margin-top: 15px;
 }
+
+/*Crear Torneig*/
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    width: 80%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.box {
+    align-items: center;
+    background-color: #001F3F;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    width: 45%;
+    min-width: 300px;
+}
+
+.input-group {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.radio-group input {
+    accent-color: yellow;
+}
+
+.input-field {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ccc;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #001F3F;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.buttons span {
+    color: white;
+    font-size: 16px;
+}
+
+.button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button.cancel {
+    background-color: red;
+    color: white;
+}
+
+.button.confirm {
+    background-color: green;
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
