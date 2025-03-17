@@ -437,9 +437,13 @@ button.inicio:hover, button.registroUsuario:hover {
     text-align: left;
 }
 
+
+/*Me hace la separacion de los bloques grisess
+si hago el widt mas grande, me movera el tiempo hacia abajo*/
 .matches {
-    margin: 20px 0;
-    width: 100%;
+    margin: 20px ;
+    width: 50%;
+  
 }
 
 .match {
@@ -463,6 +467,6 @@ button.inicio:hover, button.registroUsuario:hover {
 }
 
 .torneo-time h2 {
-    font-size: 22px;
+    font-size: 50px;
     margin-top: 15px;
 }
