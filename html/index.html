@@ -33,6 +33,7 @@
         <button class="boton oculto" data-seccion="torneosFinalizados">TORNEOS FINALIZADOS</button>
         <button class="boton oculto" data-seccion="config">CONFIGURACIÓ</button>
         <button class="boton oculto" data-seccion="TorenoSuis">Torneo suis</button>
+        <button class="boton oculto" data-seccion="CrearTorneig">Crear Torneig</button>
     </nav>
 
     <!-- Contenido principal -->
@@ -213,6 +214,77 @@
         </div>
 </section>
 
+<section id="CrearTorneig" class="seccion oculto">
+    <div class="container" style="display: flex; gap: 20px;">
+        <!-- Sección 1 -->
+        <section class="box" style="flex: 1;">
+            <div class="input-group">
+                <label>Nom del Torneig:</label>
+                <input type="text" class="input-field" value="Nom del Torneig">
+            </div>
+
+            <div class="input-group">
+                <label>Joc:</label>
+                <div class="radio-group">
+                    <input type="radio" name="game" id="magic">
+                    <label for="magic">Magic</label>
+                    <input type="radio" name="game" id="pokemon">
+                    <label for="pokemon">Pokémon</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Competitiu:</label>
+                <div class="radio-group">
+                    <input type="radio" name="competitive" id="yes">
+                    <label for="yes">Sí</label>
+                    <input type="radio" name="competitive" id="no">
+                    <label for="no">No</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Format:</label>
+                <div class="radio-group">
+                    <input type="radio" name="format" id="swiss">
+                    <label for="swiss">Suís</label>
+                    <input type="radio" name="format" id="elimination">
+                    <label for="elimination">Eliminatoria</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2 -->
+        <section class="box" style="flex: 1;">
+            <div class="input-group">
+                <label>Virtual:</label>
+                <div class="radio-group">
+                    <input type="radio" name="virtual" id="virtual-yes">
+                    <label for="virtual-yes">Sí</label>
+                    <input type="radio" name="virtual" id="virtual-no">
+                    <label for="virtual-no">No</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Partides:</label>
+                <input type="text" class="input-field" value="Num Partides Per Ronda">
+            </div>
+
+            <div class="input-group">
+                <label>Premi:</label>
+                <input type="text" class="input-field" value="Premi en Metàl·lic">
+            </div>
+        </section>
+    </div>
+
+    <!-- Botones -->
+    <div class="buttons" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding: 10px; background-color: #001F3F; border-radius: 8px; margin-top: 20px;">
+        <span style="color: white; font-size: 16px;">Crear Torneig</span>
+        <button class="button cancel" style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">Cancelar</button>
+        <button class="button confirm" style="background-color: green; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">Confirmar</button>
+    </div>
+</section>
 
 
 
