@@ -20,7 +20,7 @@ body {
     background: white;
     margin: 10px auto;
     width: 80%;
-    max-width: 600px;
+    max-width: 650px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -32,7 +32,7 @@ body {
 .oculto {
     display: none !important;
 }
-
+ 
 /* Encabezado */
 header {
     background-color: #0d1245;
@@ -94,22 +94,25 @@ nav {
 .torneo {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    gap: 20px;
 }
 
 .imagen-torneo {
-    width: 100%;
+    width: 70%;
     max-width: 471px;
     height: auto;
     border-radius: 10px;
 }
 
 .info p {
-    padding: 15px;
+    display: flex;
+    justify-content: left;
+    padding: 10px;  
     margin: 10px 0;
-    text-align: left;
     border-radius: 10px;
     background-color: #F0EFFF;
+    float: left; 
+    display: block;
 }
 
 /* Sección de Configuración */
@@ -563,3 +566,4 @@ si hago el widt mas grande, me movera el tiempo hacia abajo*/
 .button:hover {
     opacity: 0.8;
 }
+

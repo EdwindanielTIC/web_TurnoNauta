@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     }
 
+
     
     function actualizarPaginacion(seccionActiva) {
     
@@ -140,6 +141,29 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     });
 
- 
+   
+
     mostrarSeccion('login');
 });
+
+/*La siguiente funcion hace lo mismo que mostrarSeccion
+    oculta y luego muestra
+*/ 
+
+function irASeccion(id) {
+    // First hide all sections using the same method as mostrarSeccion
+    document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.classList.add('oculto');
+        seccion.classList.remove('activa');
+    });
+
+    // muestra la seccion
+    let seccionDestino = document.getElementById(id);
+    if (seccionDestino) {
+        seccionDestino.classList.remove('oculto');
+        seccionDestino.classList.add('activa');
+        seccionDestino.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error("❌ ERROR: No se ha encontrado la sección con ID:", id);
+    }
+}

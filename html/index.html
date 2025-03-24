@@ -32,8 +32,8 @@
         <button class="boton oculto" data-seccion="torneos">TORNEOS ACTIVOS</button>
         <button class="boton oculto" data-seccion="torneosFinalizados">TORNEOS FINALIZADOS</button>
         <button class="boton oculto" data-seccion="config">CONFIGURACIÓ</button>
-        <button class="boton oculto" data-seccion="TorenoSuis">Torneo suis</button>
-        <button class="boton oculto" data-seccion="CrearTorneig">Crear Torneig</button>
+        <!-- <button class="boton oculto" data-seccion="TorenoSuis">TORNEIG SUIS</button> -->
+        <button class="boton oculto" data-seccion="CrearTorneig">CREAR TORNEIG</button>
     </nav>
 
     <!-- Contenido principal -->
@@ -86,7 +86,9 @@
                         <p><strong>TORNEOS GANADOS:</strong> <span>4</span></p>
                     </div>
                 </div>
+              
             </div>
+          
         </section>
 
         <!-- Sección de Perfil -->
@@ -150,12 +152,12 @@
 <section id="torneos" class="seccion oculto">
     <h2>Torneigs Actius:</h2>
     <div class="torneo-lista">
-        <div class="torneo-item">Torneig 1 <span>Codi: 1 | Joc: Magic | Format: Suís | Jugadors: 16</span></div>
-        <div class="torneo-item">PKM Prova <span>Codi: 2 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
-        <div class="torneo-item">Magic WC <span>Codi: 3 | Joc: Magic | Format: Elim. | Jugadors: 16</span></div>
-        <div class="torneo-item">Trn 2 PKM <span>Codi: 4 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
-        <div class="torneo-item">PKM WT <span>Codi: 5 | Joc: Pokémon | Format: Elim. | Jugadors: 16</span></div>
-        <div class="torneo-item">Magic 3 <span>Codi: 6 | Joc: Magic | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">Torneig 1 <span>Codi: 1 | Joc: Magic | Format: Suís | Jugadors: 16</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">PKM Prova <span>Codi: 2 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">Magic WC <span>Codi: 3 | Joc: Magic | Format: Elim. | Jugadors: 16</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">Trn 2 PKM <span>Codi: 4 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">PKM WT <span>Codi: 5 | Joc: Pokémon | Format: Elim. | Jugadors: 16</span></div>
+        <div class="torneo-item" onclick="irASeccion('TorenoSuis')">Magic 3 <span>Codi: 6 | Joc: Magic | Format: Suís | Jugadors: 8</span></div>
     </div>
     <div class="paginacion">
         <button class="prev">&#8592;</button>
@@ -163,6 +165,9 @@
         <button class="next">&#8594;</button>
     </div>
 </section>
+
+
+
 
 <!-- Sección de Torneos Finalizados -->
 
@@ -175,6 +180,7 @@
         <div class="torneoFinal-item">Trn 2 PKM <span>Codi: 4 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
         <div class="torneoFinal-item">PKM WT <span>Codi: 5 | Joc: Pokémon | Format: Elim. | Jugadors: 16</span></div>
         <div class="torneoFinal-item">Magic 3 <span>Codi: 6 | Joc: Magic | Format: Suís | Jugadors: 8</span></div>
+
     </div>
     <div class="paginacion">
         <button class="prev">&#8592;</button>
@@ -223,8 +229,6 @@
                 </div>
             </div>
 
-            <!--tengo que arreglar esto, debo separ con el vs-->
-
             <div class="torneo-time">
                 <h2>Temps: 50:00</h2>
             </div>
@@ -232,6 +236,8 @@
         </div>
        
 </section>
+
+
 
 <section id="CrearTorneig" class="seccion oculto">
     <div class="container" style="display: flex; gap: 20px;">
