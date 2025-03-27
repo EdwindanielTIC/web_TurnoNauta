@@ -10,6 +10,7 @@
     
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/botones.css">
 </head>
 <body>
 
@@ -18,9 +19,9 @@
         <div class="perfil">
             <img src="../html/img/LOGO.png" alt="Logo Turnonauta">
         </div>
-        <h1>BENVINGUTS A TURNONAUTA</h1>
+        <h1 id="tituloBienvenida">BENVINGUTS A TURNONAUTA</h1>
         <div class="usuario">
-            <span>Usuari</span>
+            <span id="idUsuairo">Usuari</span>
             <img src="../html/img/OIP 3.jpg" alt="Avatar del usuario">
         </div>
     </header>
@@ -28,12 +29,12 @@
     <!-- Navegación -->
     <nav>
         <!-- <button class="boton" data-seccion="login" autofocus>INICIAR SESSIÓ</button> -->
-        <button class="boton oculto" data-seccion="inicio">RESUMEN PERFIL</button> <!--la tengo-->
-        <button class="boton oculto" data-seccion="torneos">TORNEOS ACTIVOS</button>
-        <button class="boton oculto" data-seccion="torneosFinalizados">TORNEOS FINALIZADOS</button>
-        <button class="boton oculto" data-seccion="config">CONFIGURACIÓ</button>
+        <button id="btnResumenPerfil" class="boton oculto" data-seccion="inicio">RESUMEN PERFIL</button> <!--la tengo-->
+        <button id="btnTorneosActivos" class="boton oculto" data-seccion="torneos">TORNEOS ACTIVOS</button>
+        <button id="btnTorneosFinalizados" class="boton oculto" data-seccion="torneosFinalizados">TORNEOS FINALIZADOS</button>
+        <button id="btnConfiguracion" class="boton oculto" data-seccion="config">CONFIGURACIÓ</button>
         <!-- <button class="boton oculto" data-seccion="TorenoSuis">TORNEIG SUIS</button> -->
-        <button class="boton oculto" data-seccion="CrearTorneig">CREAR TORNEIG</button>
+        <button id="btnCrearTorneo" class="boton oculto" data-seccion="CrearTorneig">CREAR TORNEIG</button>
     </nav>
 
     <!-- Contenido principal -->
@@ -44,13 +45,13 @@
             <div class="contenedor">
                 <img src="../html/img/image 1.png" alt="Astronauta">
                 <div class="seccionDeInicio">
-                    <h2>Inicia Sessió</h2>
+                    <h2 id="btnInicioSesion1">Inicia Sessió</h2>
                     <form id="loginForm">
-                        <input type="text" placeholder="Correu o nom d'usuari" required>
-                        <input type="password" placeholder="Contrasenya" required>
-                        <a href="#" class="contraseñaOlvidada">Has oblidat la contrasenya?</a>
-                        <button type="submit" class="inicio">Inicia Sessió</button>
-                        <button type="button" class="registroUsuario">Crear usuari</button>
+                        <input id="inputCorreo" type="text" placeholder="Correu o nom d'usuari" required>
+                        <input  id="inputContrasena" type="password" placeholder="Contrasenya" required>
+                        <a id="linkOlvidarContrasena" href="#" class="contraseñaOlvidada">Has oblidat la contrasenya?</a>
+                        <button id="btnInicioSesion" type="submit" class="inicio">Inicia Sessió</button>
+                        <button type="button" id="creaUsuarioLogin" class="registroUsuario">Crear usuari</button>
                     </form>
                 </div>
             </div>
@@ -61,12 +62,12 @@
         <section id="recuperar-contrasena" class="seccion oculto">
             <div class="container">
                 <img src="../html/img/image 1.png" alt="Avatar" class="avatar">
-                <h1 class="recuPass"> Recuperar contraseña </h1>
+                <h1 id="tituloRecuperarContrasena" class="recuPass"> Recuperar contraseña </h1>
                 <form action="#" method="POST">
-                    <input type="email" placeholder="Intrroduce el correo" required>
-                    <button type="submit"> Enviar </button>
+                    <input id="inputCorreoRecuperar" type="email" placeholder="Intrroduce el correo" required>
+                    <button id="btnEnviar" type="submit"> Enviar </button>
                 </form>
-                <button id=""> Tornar a l'inici de sessió </button>
+                <button id="btnVolverLogin"> Tornar a l'inici de sessió </button>
             </div>
         </section>
             
@@ -78,12 +79,12 @@
                 <div class="torneo">
                     <img src="../html/img/fotoinicial.webp" alt="Imagen del torneo" class="imagen-torneo">
                     <div class="info">
-                        <p><strong>ID:</strong> <span>14784879CD</span></p>
-                        <p><strong>NOM:</strong> <span>Ahmed Aziz</span></p>
-                        <p><strong>RONDAS GANADAS:</strong> <span>2</span></p>
-                        <p><strong>RONDAS TOTAL:</strong> <span>7</span></p>
-                        <p><strong>TORNEOS:</strong> <span>8</span></p>
-                        <p><strong>TORNEOS GANADOS:</strong> <span>4</span></p>
+                        <p id="idCodi"><strong>ID:</strong> <span>14784879CD</span></p>
+                        <p id="nomJugador"><strong>NOM:</strong> <span>Ahmed Aziz</span></p>
+                        <p id="rondasJugador"><strong>RONDAS GANADAS:</strong> <span>2</span></p>
+                        <p id="rontastotalJugador"><strong>RONDAS TOTAL:</strong> <span>7</span></p>
+                        <p id="torneosJugador"><strong>TORNEOS:</strong> <span>8</span></p>
+                        <p id="TorneosGanadosJugador"><strong>TORNEOS GANADOS:</strong> <span>4</span></p>
                     </div>
                 </div>
               
@@ -101,22 +102,42 @@
         <section id="config" class="seccion oculto">
             <div class="config-opciones">
                 <div class="columna">
-                    <h2>IDIOMA</h2>
-                    <button class="boton activo">ESPAÑOL</button>
+                    <h2 id="idiomas" >IDIOMA</h2>
+                    <!-- <button class="boton activo">ESPAÑOL</button> -->
+                    <select id="selectorIdioma">
+                        <option id="cata" value="ca">Català</option>
+                        <option id="espa" value="es">Español</option>
+                        <option id ="franc" value="fr">Frances</option>
+                        <option id="ingl" value="en">Ingles</option>
+                    </select>
 
-                    <h2>NOMBRE</h2>
-                    <button class="boton">Cambiar nombre</button>
+                    <h2 id="idnombre">NOMBRE</h2>
+                    <button id="cambNombre" class="boton">Cambiar nombre</button>
 
                     <h2>FOTO</h2>
                     <button id="btnCambiarFoto">Cambiar Foto</button>
                 </div>
 
                 <div class="columna">
-                    <h2>SONIDO Y VIBRACIONES</h2>
-                    <button class="boton">ON</button>
+                    <h2 id="soyvi">SONIDO Y VIBRACIONES</h2>
 
-                    <h2>CUENTA</h2>
-                    <button class="boton eliminar">Eliminar cuenta</button>
+                    <div class="container"> 
+                        <div class="pane">
+                            <label class="label yes">
+                                <span id="yes">Yes</span>
+                                <input id="left" class="input" name="radio" type="radio">
+                            </label>
+                            <label class="label no">
+                                <span id="not">No</span>
+                                <input id="middle" class="input" checked="checked" name="radio" type="radio">
+                            </label>
+                        </div>
+                    </div>
+                    
+                   
+
+                    <h2 id="cuenta">CUENTA</h2>
+                    <button id="btnEliminarCuenta" class="boton eliminar">Eliminar cuenta</button>
                 </div>
             </div>
         </section>
@@ -126,7 +147,7 @@
 <section id="cambiarFoto" class="seccion oculto">  
     <div class="container">
         <div class="profile-edit">
-            <h2>EDITAR FOTO DE PERFIL</h2>
+            <h2 id="cambfoto">EDITAR FOTO DE PERFIL</h2>
             <div class="current-avatar">
                 <img src="img/OIP 3.jpg" alt="zorro">
             </div>
@@ -139,18 +160,14 @@
                 <img src="img/magic3.jpg" alt="Guerrera">
             </div>
             <!-- Botón añadido -->
-            <button>Volver al login</button>
+            <button id="volverLogin">Volver al login</button>
         </div>
     </div>
 </section>
 
-
-
-
-
         <!-- Sección de Torneos Activos -->
 <section id="torneos" class="seccion oculto">
-    <h2>Torneigs Actius:</h2>
+    <h2 id="tornAct">Torneigs Actius:</h2>
     <div class="torneo-lista">
         <div class="torneo-item" onclick="irASeccion('TorenoSuis')">Torneig 1 <span>Codi: 1 | Joc: Magic | Format: Suís | Jugadors: 16</span></div>
         <div class="torneo-item" onclick="irASeccion('TorenoSuis')">PKM Prova <span>Codi: 2 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
@@ -167,19 +184,17 @@
 </section>
 
 
-
-
 <!-- Sección de Torneos Finalizados -->
 
 <section id="torneosFinalizados" class="seccion oculto">
-    <h2>Torneigs Finalizats:</h2>
+    <h2 id="idtorneigacabats">Torneigs Finalizats:</h2>
     <div class="torneo-lista">
-        <div class="torneoFinal-item">Torneig 1 <span>Codi: 1 | Joc: Magic | Format: Suís | Jugadors: 16</span></div>
-        <div class="torneoFinal-item">PKM Prova <span>Codi: 2 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
-        <div class="torneoFinal-item">Magic WC <span>Codi: 3 | Joc: Magic | Format: Elim. | Jugadors: 16</span></div>
-        <div class="torneoFinal-item">Trn 2 PKM <span>Codi: 4 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
-        <div class="torneoFinal-item">PKM WT <span>Codi: 5 | Joc: Pokémon | Format: Elim. | Jugadors: 16</span></div>
-        <div class="torneoFinal-item">Magic 3 <span>Codi: 6 | Joc: Magic | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">Torneig 1 <span>Codi: 1 | Joc: Magic | Format: Suís | Jugadors: 16</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">PKM Prova <span>Codi: 2 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">Magic WC <span>Codi: 3 | Joc: Magic | Format: Elim. | Jugadors: 16</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">Trn 2 PKM <span>Codi: 4 | Joc: Pokémon | Format: Suís | Jugadors: 8</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">PKM WT <span>Codi: 5 | Joc: Pokémon | Format: Elim. | Jugadors: 16</span></div>
+        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')">Magic 3 <span>Codi: 6 | Joc: Magic | Format: Suís | Jugadors: 8</span></div>
 
     </div>
     <div class="paginacion">
@@ -189,20 +204,54 @@
     </div>
 </section>
 
+<!-- Torneos finalizados detallado -->
+<section id="DetallesTorneoFin"class="seccion oculto">
+    
+<div class="containerFintorneo">
+    <div class="header">
+        <span id="codi1">CODI: 1</span>
+        <span>MTG</span>
+        <span id="formatosuis">Format: Suis</span>
+    </div>
+    <div class="ranking">
+        <img src="img/posicion numero 1 con una corona.png" alt="1er lugar">
+        <span class="name">Kaito</span>
+        <span class="place">4°</span>
+        <span class="name">Chandra</span>
+       
+    </div>
+    <div class="ranking">
+        <img src="img/posición número 2 con una corona.png" alt="2do lugar">
+        <span class="name">Nissa</span>
+        <span class="place">5°</span>
+        <span class="name">Jace</span>
+       
+    </div>
+    <div class="ranking">
+        <img src="img/posición número 3 con una corona.png" alt="3er lugar">
+        <span class="name">Sorin</span>
+        <span class="place">6°</span>
+        <span class="name">Jace</span>
+        
+    </div>
+   
+</div>
+
+</section>
 
 <!--Torneo suis-->
 <section  id="TorenoSuis" class="seccion oculto">
         <div class="torneo-card">
             <div class="torneo-header">
-                <h2>Torneig 1</h2>
-                <p><strong>CODI:</strong> 1</p>
+                <h2 id="torn1">Torneig 1</h2>
+                <p id="code"><strong>CODI:</strong> 1</p>
                 <p><strong>MTG</strong></p>
                 <p><strong>Format:</strong> Suís</p>
             </div>
             <div class="torneo-info">
-                <p>Millor de 3 partides</p>
-                <p>Jugadors: 7</p>
-                <p>50 min per Ronda</p>
+                <p id="mejorpartida">Millor de 3 partides</p>
+                <p id="jugador7">Jugadors: 7</p>
+                <p id="temps">50 min per Ronda</p>
                 <p>Places: 16</p>
             </div>
             <div class="matches">
@@ -230,26 +279,24 @@
             </div>
 
             <div class="torneo-time">
-                <h2>Temps: 50:00</h2>
+                <h2 id="tiempo2">Temps: 50:00</h2>
             </div>
             
         </div>
        
 </section>
 
-
-
 <section id="CrearTorneig" class="seccion oculto">
     <div class="container" style="display: flex; gap: 20px;">
         <!-- Sección 1 -->
         <section class="box" style="flex: 1;">
             <div class="input-group">
-                <label>Nom del Torneig:</label>
-                <input type="text" class="input-field" value="Nom del Torneig">
+                <label id="nombreTorneig">Nom del Torneig:</label>
+                <input type="text" class="input-field" value="Nom">
             </div>
 
             <div class="input-group">
-                <label>Joc:</label>
+                <label id="labelJoc">Joc:</label>
                 <div class="radio-group">
                     <input type="radio" name="game" id="magic">
                     <label for="magic">Magic</label>
@@ -259,7 +306,7 @@
             </div>
 
             <div class="input-group">
-                <label>Competitiu:</label>
+                <label id="labelCompe">Competitiu:</label>
                 <div class="radio-group">
                     <input type="radio" name="competitive" id="yes">
                     <label for="yes">Sí</label>
@@ -282,22 +329,22 @@
         <!-- Sección 2 -->
         <section class="box" style="flex: 1;">
             <div class="input-group">
-                <label>Virtual:</label>
+                <label id="virtual">Virtual:</label>
                 <div class="radio-group">
-                    <input type="radio" name="virtual" id="virtual-yes">
-                    <label for="virtual-yes">Sí</label>
+                    <input  type="radio" name="virtual" id="virtual-yes">
+                    <label id="yes" for="virtual-yes">Sí</label>
                     <input type="radio" name="virtual" id="virtual-no">
-                    <label for="virtual-no">No</label>
+                    <label id="not" for="virtual-no">No</label>
                 </div>
             </div>
 
             <div class="input-group">
-                <label>Partides:</label>
+                <label id="labelpartidas">Partides:</label>
                 <input type="text" class="input-field" value="Num Partides Per Ronda">
             </div>
 
             <div class="input-group">
-                <label>Premi:</label>
+                <label id="premi">Premi:</label>
                 <input type="text" class="input-field" value="Premi en Metàl·lic">
             </div>
         </section>
@@ -305,13 +352,11 @@
 
     <!-- Botones -->
     <div class="buttons" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding: 10px; background-color: #001F3F; border-radius: 8px; margin-top: 20px;">
-        <span style="color: white; font-size: 16px;">Crear Torneig</span>
+        <span id="spacreatOrneig" style="color: white; font-size: 16px;">Crear Torneig</span>
         <button class="button cancel" style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">Cancelar</button>
         <button class="button confirm" style="background-color: green; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">Confirmar</button>
     </div>
 </section>
-
-
 
 
     </main>
@@ -319,14 +364,16 @@
     <!-- Pie de página -->
     <footer>
         <div class="codigo">
-            <label for="codi">CODI:</label>
+            <label id=" idCodi"for="codi">CODI:</label>
             <input type="text" id="codi">
-            <button id="empezar">EMPEZAR</button>
+            <button id="idempezar">EMPEZAR</button>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../js/index.js"></script>
+    <script src="../js/traducciones.js"></script>
+    <script src="../js/cambiarIdioma.js"></script>
 
 </body>
 </html>

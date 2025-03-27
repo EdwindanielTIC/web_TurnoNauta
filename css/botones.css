@@ -1,0 +1,44 @@
+.container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.pane {
+  outline: 2px solid #FFC300;
+  box-shadow: 0 0 10px #FFC30077, inset 0 0 10px #FFC30077;
+  height: 1cm;
+  width: 3cm;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.7s ease;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFC300;
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  height: 1cm;
+  width: 1.5cm;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.yes:has(input:checked) {
+  color: green;
+}
+
+.no:has(input:checked) {
+  color: red;
+}

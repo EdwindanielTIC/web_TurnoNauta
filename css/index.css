@@ -567,3 +567,36 @@ si hago el widt mas grande, me movera el tiempo hacia abajo*/
     opacity: 0.8;
 }
 
+/*Detalles torneos finalizados*/
+.containerFintorneo {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #0B1340;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.ranking {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #1A1F5A; */
+    padding: 15px;
+    border-radius: 10px;
+    /* margin: 10px 0; */
+}
+.ranking img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+.name, .place {
+    margin: 10px;
+    background-color: #D3D3D3;
+    color: black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
