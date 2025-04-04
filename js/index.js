@@ -1,3 +1,31 @@
+
+ function mostrarSeccion(id) {
+    console.log("Cambiando a la sección:", id);
+
+ 
+    document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.classList.add('oculto');
+        seccion.classList.remove('activa');
+    });
+
+
+    const seccionActiva = document.getElementById(id);
+    if (seccionActiva) {
+        seccionActiva.classList.remove('oculto');
+        seccionActiva.classList.add('activa');
+        console.log("Sección encontrada y mostrada:", id);
+        
+ 
+        if (id === 'torneos' || id === 'torneosFinalizados') {
+            paginaActual = 1; 
+            actualizarPaginacion(seccionActiva);
+        }
+    } else {
+        console.error("❌ ERROR: No se encontró la sección con ID:", id);
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", function (){
   
     let paginaActual = 1;
@@ -27,32 +55,6 @@ document.addEventListener("DOMContentLoaded", function (){
     }
 
 
-    
- function mostrarSeccion(id) {
-    console.log("Cambiando a la sección:", id);
-
- 
-    document.querySelectorAll('.seccion').forEach(seccion => {
-        seccion.classList.add('oculto');
-        seccion.classList.remove('activa');
-    });
-
-
-    const seccionActiva = document.getElementById(id);
-    if (seccionActiva) {
-        seccionActiva.classList.remove('oculto');
-        seccionActiva.classList.add('activa');
-        console.log("Sección encontrada y mostrada:", id);
-        
- 
-        if (id === 'torneos' || id === 'torneosFinalizados') {
-            paginaActual = 1; 
-            actualizarPaginacion(seccionActiva);
-        }
-    } else {
-        console.error("❌ ERROR: No se encontró la sección con ID:", id);
-    }
-}
 
 
 
@@ -66,28 +68,6 @@ document.addEventListener("DOMContentLoaded", function (){
             }
         });
     });
-
-
-    // document.getElementById('loginForm').addEventListener('submit', function (event) {
-    //     event.preventDefault();
-
-    //     const usuario = document.querySelector('input[type="text"]').value.trim();
-    //     const contraseña = document.querySelector('input[type="password"]').value.trim();
-
-    //     if (usuario && contraseña) {
-    //         console.log("Inicio de sesión exitoso para:", usuario);
-    //         mostrarSeccion('inicio');
-
-    //         document.querySelectorAll('nav .boton').forEach(boton => {
-    //             boton.classList.remove('oculto');
-    //         });
-
-        
-    //         document.querySelector('.usuario span').textContent = usuario;
-    //     } else {
-    //         alert('⚠️ Por favor, introduce un usuario y contraseña válidos.');
-    //     }
-    // });
 
   
     const btnCambiarFoto = document.getElementById("btnCambiarFoto");
