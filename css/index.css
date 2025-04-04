@@ -1,7 +1,6 @@
 /* Reset básico */
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
@@ -137,38 +136,20 @@ nav {
 
 /* Pie de página */
 footer {
-    background-color: #0d1245;
-    color: white;
-    padding: 15px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+   position: relative; 
+   width: 100%;
+   bottom: 0;
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 10px;
 }
 
 .codigo {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-}
-
-.codigo input {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.codigo button {
-    background-color: #FFC300;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.codigo button:hover {
-    background-color: #b0b0b0;
+    
 }
 
 /* Sección de Torneos Activos */

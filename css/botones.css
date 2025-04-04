@@ -42,3 +42,64 @@
 .no:has(input:checked) {
   color: red;
 }
+
+/*boton de crear usuarios*/
+
+.containerUsuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* Evita que los elementos se muevan a una nueva línea */
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.image-section {
+  flex: 1;
+  text-align: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 250px; /* Limita el tamaño de la imagen */
+  border-radius: 10px;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Asegura que los inputs estén centrados */
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: gray;
+}
+

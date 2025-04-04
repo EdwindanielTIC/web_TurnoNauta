@@ -1,8 +1,12 @@
-document.getElementById('empezar').addEventListener('click', function() {
-    let codi = document.getElementById('codi').value;
-    if (codi.trim() !== "") {
-        alert("Código ingresado: " + codi);
-    } else {
-        alert("Por favor, ingrese un código.");
-    }
-});
+document.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const footer = document.querySelector("footer");
+ 
+    sections.forEach((section) => {
+       const rect = section.getBoundingClientRect();
+       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          footer.style.backgroundColor = section.dataset.footerColor || "#333";
+          footer.innerHTML = section.dataset.footerContent || "<p>Footer estándar</p>";
+       }
+    });
+ });

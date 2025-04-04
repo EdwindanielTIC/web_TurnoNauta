@@ -51,12 +51,39 @@
                         <input  id="inputContrasena" type="password" placeholder="Contrasenya" required>
                         <a id="linkOlvidarContrasena" href="#" class="contraseñaOlvidada">Has oblidat la contrasenya?</a>
                         <button id="btnInicioSesion" type="submit" class="inicio">Inicia Sessió</button>
-                        <button type="button" id="creaUsuarioLogin" class="registroUsuario">Crear usuari</button>
+                        <button type="button" id="creaUsuarioLogin" onclick="irASeccion('CrearUsuario')" class="registroUsuario">Crear usuari</button>
                     </form>
                 </div>
             </div>
         </section>
 
+        <!--Seccion de crear usuario -->
+
+        <section id="CrearUsuario" class="seccion oculto">
+            <div class="containerUsuario">
+                <div class="form-container">
+                    <!-- Imagen -->
+                    <div class="image-section">
+                        <h2>Crear usuari</h2>
+                        <img src="img/image 1.png" alt="Astronauta">
+                    </div>
+                    <div class="form-section">
+                  
+                        <form id="loginFormUsuario">
+                            <input type="text" id="username" placeholder="Nom del usuari">
+                            <input type="tel" id="phone" placeholder="Teléfono">
+                            <input type="email" id="email" placeholder="Correu d'usuari">
+                            <input type="password" id="password" placeholder="Contrasenya">
+                            <button type="submit">Crear usuari</button>
+                        </form>
+                    </div>
+                  
+                </div>
+                  <!-- Formulario -->
+                 
+            </div>
+
+        </section>
 
         <!--Seccion de recuperar contraseña-->
         <section id="recuperar-contrasena" class="seccion oculto">
@@ -364,17 +391,17 @@
     <!-- Pie de página -->
     <footer>
         <div class="codigo">
-            <label id=" idCodi"for="codi">CODI:</label>
-            <input type="text" id="codi">
-            <button id="idempezar">EMPEZAR</button>
+            <img src="img/LOGO.png">
+            <p> TURNONAUTA</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/turnoNauta.js"></script>
     <script src="../js/index.js"></script>
-    <script src="../js/traducciones.js"></script>
-    <script src="../js/cambiarIdioma.js"></script>
     <script src="../js/conect.js"></script>
+    <script src="../js/traducciones.js"></script>
+    
    
 </body>
 </html>

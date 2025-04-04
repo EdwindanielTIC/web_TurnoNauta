@@ -261,7 +261,7 @@
         document.getElementById("btnEliminarCuenta").textContent = traducciones[idioma].btnEliminarCuenta;
 
         //he añadido a aprtir de aqui
-        document.getElementById("idempezar").textContent = traducciones[idioma].empezar;
+
         document.getElementById("idCodi").textContent = traducciones[idioma].idCodi;
         // document.getElementById("idUsuairo").textContent = traducciones[idioma].idUsuairo;
         document.getElementById("nomJugador").textContent = traducciones[idioma].nomJugador;
