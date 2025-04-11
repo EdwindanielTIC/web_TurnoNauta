@@ -1,3 +1,4 @@
+const url = "https://turnonauta.asegura.dev:8443";
 
 document.getElementById("loginForm").addEventListener("submit", async function(event) {
     event.preventDefault();
@@ -5,6 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const usuario = document.getElementById("inputCorreo").value.trim();
     const contraseña = document.getElementById("inputContrasena").value.trim();
     const botonInicio = document.getElementById("btnInicioSesion");
+    // url = "https://turnonauta.asegura.dev:8443";
 
     if (!usuario || !contraseña) {
         alert("⚠️ Por favor, introdueix un correu/nom d'usuari i contrasenya.");
@@ -15,41 +17,34 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     botonInicio.textContent = "Iniciant...";
 
     try {
-        let response = await fetch(`https://52.20.160.197:8443/users/login?username=${encodeURIComponent(usuario)}&password=${encodeURIComponent(contraseña)}`, {
+        let response = await fetch(`${url}/users/login?username=${encodeURIComponent(usuario)}&password=${encodeURIComponent(contraseña)}`, {
             method: "GET",
             headers: {
                 "Accept": "application/json"
             }
         });
 
-        // Obtener la respuesta incluso si no es OK
         let data = await response.json();
+        console.log("Respuesta del servidor:", data);
 
         if (!response.ok) {
             if (response.status === 401) {
                 alert("⚠️ L'usuari no existe o les credencials són incorrectes.");
-                return;
             } else {
                 alert(`⚠️ Error del servidor: ${response.status}`);
-                return;
             }
+            return;
         }
 
-        // Verificar si el login fue realmente exitoso según el contenido de 'data'
-        // Ajusta esta condición según la estructura de la respuesta de tu servidor
-        if (data && (data.success || data.message === "Login exitoso" || data.username)) {
-            alert("Inici de sessió reeixit!");
-            console.log("Usuari autenticat:", data);
+        // Verificamos si 'data' es un número (indicador de éxito) debe de ser mayor a 0 porque si es menor a 0, eso indica que el
+        if (typeof data === "number" && data >= 0) {
+            alert("Usuario correcto!!");
+            console.log("Usuari autenticat, ID:", data);
 
-            // Mostrar la sección de inicio (corregido: 'inicio' con comillas)
             mostrarSeccion('inicio');
-
-            // Hacer visibles los botones de navegación
             document.querySelectorAll('nav .boton').forEach(boton => {
                 boton.classList.remove('oculto');
             });
-
-            // Mostrar el nombre del usuario en la interfaz
             document.querySelector('.usuario span').textContent = usuario;
         } else {
             alert("⚠️ L'usuari no existe o les credencials són incorrectes.");
@@ -64,7 +59,6 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         botonInicio.textContent = "Inicia Sessió";
     }
 });
-
 //Creando usuario 
 
 document.getElementById("loginFormUsuario").addEventListener("submit", async function(event) {
@@ -81,7 +75,7 @@ document.getElementById("loginFormUsuario").addEventListener("submit", async fun
     
     try {
         const userData = { username, phone, email, password };
-        let response = await fetch("https://52.20.160.197:8443/users/add_user", { 
+        let response = await fetch(`${url}/users/add_user`, { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
