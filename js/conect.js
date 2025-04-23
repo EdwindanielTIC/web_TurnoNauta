@@ -93,3 +93,50 @@ document.getElementById("loginFormUsuario").addEventListener("submit", async fun
         alert("Error al crear el usuario. Inténtalo de nuevo.");
     }
 });
+
+
+
+async function createTournament() {
+    // Obtener valores del formulario
+    const tournamentData = {
+        name: document.querySelector('#CrearTorneig input[value="Nom"]').value,
+        game: document.querySelector('#CrearTorneig input[name="game"]:checked')?.id,
+        competitive: document.querySelector('#CrearTorneig input[name="competitive"]:checked')?.id === 'yes',
+        format: document.querySelector('#CrearTorneig input[name="format"]:checked')?.id,
+        virtual: document.querySelector('#CrearTorneig input[name="virtual"]:checked')?.id === 'virtual-yes',
+        matchesPerRound: document.querySelector('#CrearTorneig input[value="Num Partides Per Ronda"]').value,
+        prize: document.querySelector('#CrearTorneig input[value="Premi en Metàl·lic"]').value
+    };
+
+    // Validar que todos los campos requeridos estén completos
+    if (!tournamentData.name || !tournamentData.game || !tournamentData.format) {
+        alert("Por favor, completa todos los campos requeridos.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`${url}/tournaments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(tournamentData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error al crear el torneo: ${response.status}`);
+        }
+
+        const result = await response.json();
+        alert("Torneo creado con éxito!");
+        console.log("Respuesta del servidor:", result);
+        
+        // Opcional: Limpiar el formulario después de crear el torneo
+        document.querySelectorAll('#CrearTorneig input[type="text"]').forEach(input => input.value = '');
+        document.querySelectorAll('#CrearTorneig input[type="radio"]').forEach(radio => radio.checked = false);
+        
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Hubo un error al crear el torneo. Por favor, intenta de nuevo.");
+    }
+}
