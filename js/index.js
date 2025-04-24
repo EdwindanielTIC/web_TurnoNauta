@@ -142,3 +142,27 @@ function irASeccion(id) {
 }
 
 //crear usuario 
+function actualizarPaginacion(seccionActiva) {
+    const paginaElemento = seccionActiva.querySelector('.pagina-actual');
+    paginaElemento.textContent = paginaActual;  // Actualiza el número de la página actual
+  
+    // Si tienes más lógica para habilitar/deshabilitar los botones de paginación, añádela aquí
+    const botonPrev = seccionActiva.querySelector('.prev');
+    const botonNext = seccionActiva.querySelector('.next');
+  
+    // Lógica para habilitar/deshabilitar botones de paginación
+    if (paginaActual <= 1) {
+      botonPrev.disabled = true;
+    } else {
+      botonPrev.disabled = false;
+    }
+  
+    // Supongamos que tienes el número total de páginas, por ejemplo 5
+    const totalPaginas = 5; 
+  
+    if (paginaActual >= totalPaginas) {
+      botonNext.disabled = true;
+    } else {
+      botonNext.disabled = false;
+    }
+  }
