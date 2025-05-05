@@ -242,22 +242,18 @@ async function createTournament() {
 async function obtenerTorneosFinalizados() {
     try {
         const respuesta = await fetch('https://turnonauta.asegura.dev:8443/tournaments/ended');
-
         if (!respuesta.ok) {
             throw new Error(`Error al obtener torneos: ${respuesta.statusText}`);
         }
-
         const torneos = await respuesta.json();
-
         // Limpiar la lista actual
         const lista = document.querySelector('#torneosFinalizados .torneo-lista');
         lista.innerHTML = '';
-
         // Iterar y agregar los torneos
         torneos.forEach(torneo => {
             const div = document.createElement('div');
             div.classList.add('torneoFinal-item');
-            div.setAttribute('onclick', "irASeccion('DetallesTorneoFin')");
+            div.onclick = () => cargarDetallesTorneo(torneo.id_torneig, torneo.joc, torneo.format);
 
             div.innerHTML = `
                 ${torneo.nom} <span>
@@ -278,11 +274,9 @@ async function obtenerTorneosFinalizados() {
 }
 
 
-
-
 async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
     try {
-        const response = await fetch('https://turnonauta.asegura.dev:8443/users/users_in_tournament', {
+        const response = await fetch(`https://turnonauta.asegura.dev:8443/users/users_in_tournament?torneig_id=${codigoTorneo}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json'
@@ -294,11 +288,12 @@ async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
         }
 
         const jugadores = await response.json();
+
         // Llenar los detalles en el HTML
         document.getElementById('detalleCodi').textContent = `CODI: ${codigoTorneo}`;
         document.getElementById('detalleJoc').textContent = nombreJuego;
         document.getElementById('detalleFormat').textContent = `Format: ${formato}`;
-      
+
         const rankingContainer = document.getElementById('rankingContainer');
         rankingContainer.innerHTML = ''; // Limpiar rankings anteriores
 
@@ -307,14 +302,14 @@ async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
             div.classList.add('ranking');
 
             const img = document.createElement('img');
-            if (index === 0) img.src = 'img/posicion numero 1 con una corona.png';
-            else if (index === 1) img.src = 'img/posición número 2 con una corona.png';
-            else if (index === 2) img.src = 'img/posición número 3 con una corona.png';
-            else img.src = 'img/otros.png';
+            // if (index === 0) img.src = 'img/posicion numero 1 con una corona.png';
+            //  if (index === 1) img.src = 'img/posición número 2 con una corona.png';
+            // else if (index === 2) img.src = 'img/posición número 3 con una corona.png';
+            // else img.src = 'img/otros.png';
 
-            img.alt = `${index + 1}º lugar`;
+            // img.alt = `${index + 1}º lugar`;
 
-            div.appendChild(img);
+            // div.appendChild(img);
             div.innerHTML += `<span class="name">${jugador.username}</span>`;
             div.innerHTML += `<span class="place">${jugador.punts} pts</span>`;
 
@@ -326,11 +321,4 @@ async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
     } catch (error) {
         console.error('Error al cargar los detalles del torneo:', error);
     }
-}
-
-function irASeccion(id) {
-    document.querySelectorAll('.seccion').forEach(seccion => {
-        seccion.classList.add('oculto');
-    });
-    document.getElementById(id).classList.remove('oculto');
 }
