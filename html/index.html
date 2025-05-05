@@ -226,85 +226,41 @@
 
 <!-- Torneos finalizados detallado -->
 <section id="DetallesTorneoFin"class="seccion oculto">
-    
-<div class="containerFintorneo">
-    <div class="header">
-        <span id="codi1">CODI: 1</span>
-        <span>MTG</span>
-        <span id="formatosuis">Format: Suis</span>
-    </div>
-    <div class="ranking">
-        <img src="img/posicion numero 1 con una corona.png" alt="1er lugar">
-        <span class="name">Kaito</span>
-        <span class="place">4°</span>
-        <span class="name">Chandra</span>
-       
-    </div>
-    <div class="ranking">
-        <img src="img/posición número 2 con una corona.png" alt="2do lugar">
-        <span class="name">Nissa</span>
-        <span class="place">5°</span>
-        <span class="name">Jace</span>
-       
-    </div>
-    <div class="ranking">
-        <img src="img/posición número 3 con una corona.png" alt="3er lugar">
-        <span class="name">Sorin</span>
-        <span class="place">6°</span>
-        <span class="name">Jace</span>
-        
-    </div>
-   
-</div>
+    <div class="containerFintorneo">
+        <div class="header">
+          <span id="detalleCodi">CODI: </span>
+          <span id="detalleJoc"></span>
+          <span id="detalleFormat">Format: </span>
+        </div>
+        <div id="rankingContainer"></div>
+      </div>
 
 </section>
 
 <!--Torneo suis-->
-<section  id="TorenoSuis" class="seccion oculto">
-        <div class="torneo-card">
-            <div class="torneo-header">
-                <h2 id="torn1">Torneig 1</h2>
-                <!-- <p id="code"><strong>CODI:</strong> 1</p> -->
-                <p><strong>MTG</strong></p>
-                <p><strong>Format:</strong> Suís</p>
-            </div>
-            <div class="torneo-info">
-                <p id="mejorpartida">Millor de 3 partides</p>
-                <p id="jugador7">Jugadors: 7</p>
-                <p id="temps">50 min per Ronda</p>
-                <p>Places: 16</p>
-            </div>
-            <div class="matches">
-                <div class="match">
-                    <span>Kaito</span> <span class="vs">vs</span> <span class="score">0-0</span> <span>Jace</span>
-                </div>
-                <div class="match">
-                    <span>Nissa</span> <span class="vs">vs</span> <span class="score">0-0</span> <span>Liliana</span>
-                </div>
-                <div class="match">
-                    <span>Chandra</span> <span class="vs">vs</span> <span class="score">0-0</span> <span>Ajani</span>
-                </div>
-                <div class="match">
-                    <span>Sorin</span> <span class="vs">vs</span> <span class="score">0-0</span> <span></span>
-                </div>
-                <div class="match">
-                    <span></span> <span class="vs">vs</span> <span class="score">0-0</span> <span></span>
-                </div>
-                <div class="match">
-                    <span></span> <span class="vs">vs</span> <span class="score">0-0</span> <span></span>
-                </div>
-                <div class="match">
-                    <span></span> <span class="vs">vs</span> <span class="score">0-0</span> <span></span>
-                </div>
-            </div>
-
-            <div class="torneo-time">
-                <h2 id="tiempo2">Temps: 50:00</h2>
-            </div>
-            
+<section id="TorenoSuis" class="seccion oculto">
+    <div class="torneo-card">
+        <div class="torneo-header">
+            <h2 id="torn1">Torneig 1</h2>
+            <p><strong>MTG</strong></p>
+            <p><strong>Format:</strong> Suís</p>
         </div>
-       
+        <div class="torneo-info">
+            <p id="mejorpartida">Millor de 3 partides</p>
+            <p id="jugador7">Jugadors: 0</p>
+            <p id="temps">50 min per Ronda</p>
+            <p>Places: 16</p>
+        </div>
+
+        <!-- Contenedor donde se insertarán los partidos -->
+        <div class="matches"></div>
+
+        <div class="torneo-time">
+            <h2 id="tiempo2">Temps: 50:00</h2>
+        </div>
+    </div>
 </section>
+
 
 <section id="CrearTorneig" class="seccion oculto"> 
     <div class="container" style="display: flex; gap: 20px;">

@@ -425,21 +425,34 @@ button.inicio:hover, button.registroUsuario:hover {
 /*Me hace la separacion de los bloques grisess
 si hago el widt mas grande, me movera el tiempo hacia abajo*/
 .matches {
-    margin: 20px ;
-    width: 50%;
-  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .match {
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    background-color: #b0b0b0;
-    padding: 15px;
-    margin: 5px 0;
-    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
     font-weight: bold;
-    color: black;
 }
+
+.player {
+    flex: 1;
+    text-align: center;
+}
+.vs, .score {
+    margin: 0 10px;
+}
+
+
+
+
+
+
 
 .score {
     margin: 0 10px;
