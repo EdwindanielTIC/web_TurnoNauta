@@ -208,9 +208,9 @@
 
 <section id="torneosFinalizados" class="seccion oculto">
     <h2 id="idtorneigacabats">Torneigs Finalizats:</h2>
-       
-        <div class="torneoFinal-item" onclick="irASeccion('DetallesTorneoFin')"> <span></span></div>
-    </div>
+
+    <div class="torneo-lista"></div> 
+
     <div class="paginacion">
         <button class="prev">&#8592;</button>
         <span class="pagina-actual">1</span>
@@ -219,17 +219,16 @@
 </section>
 
 <!-- Torneos finalizados detallado -->
-<section id="DetallesTorneoFin"class="seccion oculto">
+<section id="DetallesTorneoFin" class="seccion oculto"> 
     <div class="containerFintorneo">
-        <div class="header">
-          <span id="detalleCodi">CODI: </span>
-          <span id="detalleJoc"></span>
-          <span id="detalleFormat">Format: </span>
-        </div>
-        <div id="rankingContainer"></div>
+      <div class="header">
+        <span id="detalleCodi">CODI: </span>
+        <span id="detalleJoc"></span>
+        <span id="detalleFormat">Format: </span>
       </div>
-
-</section>
+      <div id="rankingContainer" class="ranking-list"></div>
+    </div>
+  </section>
 
 <!--Torneo suis-->
 <section id="TorenoSuis" class="seccion oculto">

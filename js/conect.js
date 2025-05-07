@@ -104,7 +104,7 @@ async function createTournament() {
     const tournamentData = {
       nom: document.querySelector('#tournament-name').value,
       joc: document.querySelector('#CrearTorneig input[name="game"]:checked')?.id,
-      usuari_organitzador: 39, 
+      usuari_organitzador: 1, 
       competitiu: document.querySelector('#CrearTorneig input[name="competitive"]:checked')?.id === 'yes',
       virtual: document.querySelector('#CrearTorneig input[name="virtual"]:checked')?.id === 'virtual-yes',
       format: document.querySelector('#CrearTorneig input[name="format"]:checked')?.id,
@@ -275,50 +275,46 @@ async function obtenerTorneosFinalizados() {
 
 
 async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
-    try {
-        const response = await fetch(`https://turnonauta.asegura.dev:8443/users/users_in_tournament?torneig_id=${codigoTorneo}`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+  try {
+    const response = await fetch(`https://turnonauta.asegura.dev:8443/users/users_in_tournament?torneig_id=${codigoTorneo}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-        if (!response.ok) {
-            throw new Error('Error al obtener los jugadores');
-        }
-
-        const jugadores = await response.json();
-
-        // Llenar los detalles en el HTML
-        document.getElementById('detalleCodi').textContent = `CODI: ${codigoTorneo}`;
-        document.getElementById('detalleJoc').textContent = nombreJuego;
-        document.getElementById('detalleFormat').textContent = `Format: ${formato}`;
-
-        const rankingContainer = document.getElementById('rankingContainer');
-        rankingContainer.innerHTML = ''; // Limpiar rankings anteriores
-
-        jugadores.forEach((jugador, index) => {
-            const div = document.createElement('div');
-            div.classList.add('ranking');
-
-            const img = document.createElement('img');
-            // if (index === 0) img.src = 'img/posicion numero 1 con una corona.png';
-            //  if (index === 1) img.src = 'img/posición número 2 con una corona.png';
-            // else if (index === 2) img.src = 'img/posición número 3 con una corona.png';
-            // else img.src = 'img/otros.png';
-
-            // img.alt = `${index + 1}º lugar`;
-
-            // div.appendChild(img);
-            div.innerHTML += `<span class="name">${jugador.username}</span>`;
-            div.innerHTML += `<span class="place">${jugador.punts} pts</span>`;
-
-            rankingContainer.appendChild(div);
-        });
-
-        irASeccion('DetallesTorneoFin');
-
-    } catch (error) {
-        console.error('Error al cargar los detalles del torneo:', error);
+    if (!response.ok) {
+      throw new Error('Error al obtener los jugadores');
     }
+
+    const jugadores = await response.json();
+
+    // Mostrar detalles del torneo
+    document.getElementById('detalleCodi').textContent = `CODI: ${codigoTorneo}`;
+    document.getElementById('detalleJoc').textContent = nombreJuego;
+    document.getElementById('detalleFormat').textContent = `Format: ${formato}`;
+
+    // Limpiar y rellenar el ranking
+    const rankingContainer = document.getElementById('rankingContainer');
+    rankingContainer.innerHTML = '';
+
+    jugadores.forEach((jugador, index) => {
+      const div = document.createElement('div');
+      div.classList.add('ranking');
+
+      // Mostrar posición, nombre y puntos
+      div.innerHTML = `
+        <span class="position">#${index + 1}</span>
+        <span class="name">${jugador.username}</span>
+        <span class="points">${jugador.punts} pts</span>
+      `;
+
+      rankingContainer.appendChild(div);
+    });
+
+    irASeccion('DetallesTorneoFin');
+
+  } catch (error) {
+    console.error('Error al cargar los detalles del torneo:', error);
+  }
 }
