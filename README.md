@@ -64,9 +64,15 @@ En esta pestaña lo que se muestra son los torneo que se han finalizado. aparece
 
 ![image](https://github.com/user-attachments/assets/6ddc59d8-e070-481d-9a4d-1b49b0984a5b)
 
+Si hacemos click en alguno de los torneos finalizados, nos aparecera las posiciones de los jugadores, por ejemplo hacemos click en Tournament1 nos aparcera las estadisticas de los jugadores: 
 
+![image](https://github.com/user-attachments/assets/1aa322b7-3cd5-421b-9bc9-e6a3a35227b7)
 
+Hacemos clicj en otro torneo finalizado commo en el prova :
 
+![image](https://github.com/user-attachments/assets/659fbb3e-e57d-4ee0-a49c-76b523617c63)
+
+### fatla poner la comprobacion que viene de la bbdd
 
 
 
