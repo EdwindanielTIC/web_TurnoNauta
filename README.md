@@ -4,7 +4,7 @@
 
 - [MOBIL](https://github.com/Snr1s3/Turnonauta.git)
 - [API](https://github.com/Snr1s3/TurnoNauta_FastAPI.git)
-ssh ubuntu@52.20.160.197
+- [Server APP](https://github.com/Snr1s3/serverApp_Turnonauta.git)
 
 
 Diseño de pagina web TurnoNauta
