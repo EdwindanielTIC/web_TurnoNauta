@@ -588,3 +588,22 @@ si hago el widt mas grande, me movera el tiempo hacia abajo*/
   .ranking .points {
     color: white; /* Puntos en blanco */
   }
+
+  /* EMPAREJAMIENTO  */
+
+  .card-emparejamiento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.card-emparejamiento strong {
+    margin: 0 10px;
+    color: #333;
+}
+

@@ -61,7 +61,6 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 });
 
 
-
 //Creando usuario 
 
 document.getElementById("loginFormUsuario").addEventListener("submit", async function(event) {
@@ -146,95 +145,6 @@ async function createTournament() {
 
 
 
-  /// torenos activos 
-  async function cargarTorneosActivos() {
-    const listaTorneos = document.querySelector(".torneo-lista");
-    listaTorneos.innerHTML = "Carregant tornejos...";
-
-    try {
-        const response = await fetch(`${url}/tournaments/active`);
-        if (!response.ok) throw new Error("No s'ha pogut carregar la llista de tornejos.");
-
-        const torneos = await response.json();
-        console.log("Respuesta de la API:", torneos);
-
-        if (torneos.length === 0) {
-            listaTorneos.innerHTML = "<p>No hi ha tornejos actius.</p>";
-            return;
-        }
-
-        listaTorneos.innerHTML = torneos.map(torneo => {
-            const formato = torneo.format === "Round Robin" ? "Round Robin" : "Elim.";
-            const joc = torneo.joc.charAt(0).toUpperCase() + torneo.joc.slice(1);
-            return `
-                <div class="torneo-item" onclick="irASeccion('TorenoSuis')">
-                    <strong>${torneo.nom}</strong>
-                    <span>
-                        Codi: ${torneo.id_torneig} | 
-                        Joc: ${joc} | 
-                        Format: ${formato} | 
-                        Jugadors: ${torneo.num_jugadors}
-                    </span>
-                </div>
-            `;
-        }).join('');
-    } catch (error) {
-        console.error("Error carregant tornejos:", error);
-        listaTorneos.innerHTML = "<p>Error al carregar els tornejos.</p>";
-    }
-}
-
-
-
-// obtenerUsuariosActivos().then(usuarios => {
-//     console.log(usuarios);
-
-//     const matchesContainer = document.querySelector('#TorenoSuis .matches');
-//     matchesContainer.innerHTML = ''; // Limpiar anteriores
-
-//     const totalJugadores = usuarios.length;
-//     const totalMatches = Math.floor(totalJugadores / 2);
-
-//     for (let i = 0; i < totalMatches; i++) {
-//         const player1 = usuarios[i * 2];
-//         const player2 = usuarios[i * 2 + 1];
-
-//         const matchHTML = `
-//             <div class="match">
-//                 <div class="player">
-//                     <span class="name">${player1.username}</span><br>
-//                     <span class="points">Punts: ${player1.punts}</span>
-//                 </div>
-//                 <span class="vs">vs</span>
-//                 <span class="score">0-0</span>
-//                 <div class="player">
-//                     <span class="name">${player2.username}</span><br>
-//                     <span class="points">Punts: ${player2.punts}</span>
-//                 </div>
-//             </div>
-//         `;
-//         matchesContainer.insertAdjacentHTML('beforeend', matchHTML);
-//     }
-
-//     // Si hay jugador impar, mostrarlo como "descansa esta ronda"
-//     if (totalJugadores % 2 !== 0) {
-//         const lastPlayer = usuarios[usuarios.length - 1];
-//         const soloHTML = `
-//             <div class="match descanso">
-//                 <div class="player">
-//                     <span class="name">${lastPlayer.username}</span><br>
-//                     <span class="points">Punts: ${lastPlayer.punts}</span>
-//                 </div>
-//                 <span class="vs">Descansa aquesta ronda</span>
-//             </div>
-//         `;
-//         matchesContainer.insertAdjacentHTML('beforeend', soloHTML);
-//     }
-
-//     document.getElementById('jugador7').textContent = `Jugadors: ${usuarios.length}`;
-// }).catch(error => {
-//     console.error('Error cargando jugadores:', error);
-// });
 
 
 /// obtener torneos finzalidos 
@@ -253,7 +163,7 @@ async function obtenerTorneosFinalizados() {
         torneos.forEach(torneo => {
             const div = document.createElement('div');
             div.classList.add('torneoFinal-item');
-            div.onclick = () => cargarDetallesTorneo(torneo.id_torneig, torneo.joc, torneo.format);
+            div.onclick = () => cargarDetallesTorneofin(torneo.id_torneig, torneo.joc, torneo.format);
 
             div.innerHTML = `
                 ${torneo.nom} <span>
@@ -274,7 +184,7 @@ async function obtenerTorneosFinalizados() {
 }
 
 
-async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
+async function cargarDetallesTorneofin(codigoTorneo, nombreJuego, formato) {
   try {
     const response = await fetch(`https://turnonauta.asegura.dev:8443/users/users_in_tournament?torneig_id=${codigoTorneo}`, {
       method: 'GET',
@@ -317,4 +227,156 @@ async function cargarDetallesTorneo(codigoTorneo, nombreJuego, formato) {
   } catch (error) {
     console.error('Error al cargar los detalles del torneo:', error);
   }
+}
+
+
+
+
+  /// torenos activos 
+  async function cargarTorneosActivos() {
+    const listaTorneos = document.querySelector(".torneo-lista");
+    listaTorneos.innerHTML = "Carregant tornejos...";
+
+    try {
+        const response = await fetch(`${url}/tournaments/active`);
+        if (!response.ok) throw new Error("No s'ha pogut carregar la llista de tornejos.");
+
+        const torneos = await response.json();
+        console.log("Respuesta de la API:", torneos);
+
+        if (torneos.length === 0) {
+            listaTorneos.innerHTML = "<p>No hi ha tornejos actius.</p>";
+            return;
+        }
+
+        listaTorneos.innerHTML = torneos.map(torneo => {
+            const formato = torneo.format === "Round Robin" ? "Round Robin" : "Elim.";
+            const joc = torneo.joc.charAt(0).toUpperCase() + torneo.joc.slice(1);
+            return `
+                <div class="torneo-item" onclick="irASeccion('TorenoSuis')">
+                    <strong>${torneo.nom}</strong>
+                    <span>
+                        Codi: ${torneo.id_torneig} | 
+                        Joc: ${joc} | 
+                        Format: ${formato} | 
+                        Jugadors: ${torneo.num_jugadors}
+                    </span>
+                </div>
+            `;
+        }).join('');
+    } catch (error) {
+        console.error("Error carregant tornejos:", error);
+        listaTorneos.innerHTML = "<p>Error al carregar els tornejos.</p>";
+    }
+}
+
+
+//EMPAREJAMIENTO 
+
+async function cargarTorneosActivos() {
+    const listaTorneos = document.querySelector(".torneo-lista");
+    listaTorneos.innerHTML = "Carregant tornejos...";
+
+    try {
+        const response = await fetch(`${url}/tournaments/active`);
+        if (!response.ok) throw new Error("No s'ha pogut carregar la llista de tornejos.");
+
+        const torneos = await response.json();
+        console.log("Respuesta de la API:", torneos);
+
+        if (torneos.length === 0) {
+            listaTorneos.innerHTML = "<p>No hi ha tornejos actius.</p>";
+            return;
+        }
+
+        listaTorneos.innerHTML = torneos.map(torneo => {
+            const formato = torneo.format === "Round Robin" ? "Round Robin" : "Elim.";
+            const joc = torneo.joc.charAt(0).toUpperCase() + torneo.joc.slice(1);
+            return `
+                <div class="torneo-item" onclick="seleccionarTorneo(${torneo.id_torneig})">
+                    <strong>${torneo.nom}</strong>
+                    <span>
+                        Codi: ${torneo.id_torneig} | 
+                        Joc: ${joc} | 
+                        Format: ${formato} | 
+                        Jugadors: ${torneo.num_jugadors}
+                    </span>
+                </div>
+            `;
+        }).join('');
+    } catch (error) {
+        console.error("Error carregant tornejos:", error);
+        listaTorneos.innerHTML = "<p>Error al carregar els tornejos.</p>";
+    }
+}
+
+// Nueva función para manejar el clic y cargar emparejamientos
+function seleccionarTorneo(idTorneig) {
+    const seccion = document.getElementById('TorenoSuis');
+    if (seccion.classList.contains('oculta')) {
+        seccion.classList.remove('oculta');
+    }
+    cargarEmparejamientos(idTorneig);
+}
+
+// Emparejamientos
+const urls = "https://turnonauta.asegura.dev:8443";
+
+async function cargarEmparejamientos(torneigId) {
+    const container = document.getElementById('emparejamientos-container');
+    if (!container) {
+        console.error("❌ Contenedor 'emparejamientos-container' no encontrado");
+        return;
+    }
+
+    container.innerHTML = 'Carregant emparellaments...';
+
+    try {
+        const response = await fetch(`${urls}/puntuacions/get_by_tournament_ordered_and_name/${torneigId}`);
+        if (!response.ok) throw new Error(`Error al cargar emparejaments: ${response.status}`);
+
+        const datos = await response.json();
+        console.log("Datos recibidos:", datos);
+
+        if (!Array.isArray(datos) || datos.length === 0) {
+            container.innerHTML = '<p>No hi ha jugadors registrats.</p>';
+            return;
+        }
+
+        const jugadoresOrdenados = datos.sort((a, b) => (b.sos || 0) - (a.sos || 0));
+        console.log("Jugadores ordenados:", jugadoresOrdenados);
+
+        let html = '';
+        for (let i = 0; i < jugadoresOrdenados.length; i += 2) {
+            const jugador1 = jugadoresOrdenados[i]?.nom || '---';
+            const jugador2 = jugadoresOrdenados[i + 1]?.nom || '---';
+
+            html += `
+                <div class="card-emparejamiento">
+                    <span>${jugador1}</span>
+                    <strong>VS</strong>
+                    <span>${jugador2}</span>
+                </div>
+            `;
+        }
+
+        container.innerHTML = html || '<p>No hi ha jugadors suficients per emparellar.</p>';
+    } catch (error) {
+        console.error("❌ Error al cargar emparejaments:", error);
+        container.innerHTML = '<p>Error al carregar emparellaments.</p>';
+    }
+}
+
+function seleccionarTorneo(idTorneig) {
+    const seccion = document.getElementById('TorenoSuis');
+    
+    if (seccion) {
+        // Asegurar que esté visible
+        seccion.classList.remove('oculta');
+        seccion.style.display = 'block';  // Asegurar visibilidad si el CSS tiene display:none
+    } else {
+        console.error("❌ Sección con ID 'TorenoSuis' no encontrada en el DOM.");
+    }
+
+    cargarEmparejamientos(idTorneig);
 }

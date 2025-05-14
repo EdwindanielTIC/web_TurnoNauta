@@ -1,4 +1,5 @@
-
+const torneosPorPagina = 5
+ let paginaActual = 1;
  function mostrarSeccion(id) {
     console.log("Cambiando a la sección:", id);
 
@@ -25,35 +26,31 @@
     }
 }
 
-
+  
 document.addEventListener("DOMContentLoaded", function (){
   
-    let paginaActual = 1;
+ 
     const torneosPorPagina = 5;
     
     
-    function actualizarPaginacion(seccionActiva) {
-    
-        const torneos = seccionActiva.querySelectorAll(".torneo-item, .torneoFinal-item");
-        const totalPaginas = Math.ceil(torneos.length / torneosPorPagina);
+  function actualizarPaginacion(seccionActiva) {
+    const torneos = seccionActiva.querySelectorAll(".torneo-item, .torneoFinal-item");
+    const totalPaginas = Math.ceil(torneos.length / torneosPorPagina);
 
-        const paginaSpan = seccionActiva.querySelector(".pagina-actual");
-        const prevButton = seccionActiva.querySelector(".prev");
-        const nextButton = seccionActiva.querySelector(".next");
-    
+    torneos.forEach((torneo, index) => {
+        const inicio = (paginaActual - 1) * torneosPorPagina;
+        const fin = inicio + torneosPorPagina;
+        torneo.style.display = (index >= inicio && index < fin) ? "block" : "none";
+    });
 
-        torneos.forEach((torneo, index) => {
-            const inicio = (paginaActual - 1) * torneosPorPagina;
-            const fin = inicio + torneosPorPagina;
-            torneo.style.display = (index >= inicio && index < fin) ? "block" : "none";
-        });
-    
-  
-        if (paginaSpan) paginaSpan.textContent = paginaActual;
-        if (prevButton) prevButton.disabled = paginaActual === 1;
-        if (nextButton) nextButton.disabled = paginaActual === totalPaginas;
-    }
+    const paginaSpan = seccionActiva.querySelector(".pagina-actual");
+    const botonPrev = seccionActiva.querySelector(".prev");
+    const botonNext = seccionActiva.querySelector(".next");
 
+    if (paginaSpan) paginaSpan.textContent = paginaActual;
+    if (botonPrev) botonPrev.disabled = paginaActual === 1;
+    if (botonNext) botonNext.disabled = paginaActual >= totalPaginas;
+}
 
 
 
