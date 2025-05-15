@@ -72,16 +72,53 @@ Hacemos clicj en otro torneo finalizado commo en el prova :
 
 ![image](https://github.com/user-attachments/assets/659fbb3e-e57d-4ee0-a49c-76b523617c63)
 
-### fatla poner la comprobacion que viene de la bbdd
+
+Ahora vamos a la API para verificar que si se ha llevado correctamente a cabo.
+![image](https://github.com/user-attachments/assets/b9f21b6b-e048-4d98-a9e6-7c59fecbd2c9)
+![image](https://github.com/user-attachments/assets/dccf5e61-0ea3-4744-a497-5765165178fe)
+
+### Configuración
+Como podemos ver en configuración, no aparece el idiona, cambiar el nombre, cambiar foto, eliminar cuenta y sonidos y vibraciones:
+![image](https://github.com/user-attachments/assets/ae5519c8-f3dd-4e77-bfee-6ce22a981559)
+
+Si hacemos click en el desplegable de Idiomas nos aparecera lo siguiente : 
+
+![image](https://github.com/user-attachments/assets/851f6685-7d48-4b42-a306-40bc7034e394)
+
+Si queremos escoger el idioma ingles, toda la pagina se nos cambiara a ese idioma : 
+
+![image](https://github.com/user-attachments/assets/c1622817-e9b1-4eaf-8179-be361ad684c4)
+
+Ahora si escogermos frances, tambien se nos cambiara a ese idioma : 
+![image](https://github.com/user-attachments/assets/1e97e14d-5469-4689-8ccb-b61ea0363d52)
+
+### EL boton cambiar nombre, no nos ha dado tiempo a poder hacerlo.
+
+### Cambiar foto
+![image](https://github.com/user-attachments/assets/e3550ea0-5c91-4c52-9102-dcb613d3d569)
+
+Si hacemos click en uno de esos personajes, se nos cambiara la foto : 
+![image](https://github.com/user-attachments/assets/4b820758-dc2e-408c-b44e-4074c9d44161)
+
+![image](https://github.com/user-attachments/assets/b04b0b7d-ab05-4b16-8862-ebb97d54ed08)
 
 
+## Sonido y vibración
 
+Actualmente esta que no haya sonido ni vibración:
+![image](https://github.com/user-attachments/assets/8e662d36-17c7-408a-b632-3738e3f1477d)
 
+Ahora cambiamos a si y nos aparecera de diferente color el si:
 
+![image](https://github.com/user-attachments/assets/e8a56a2a-7c55-42fb-845a-5f593ab62cae)
 
+Si queremos hacer eliminar cuenta, me aparecera lo siguiente : 
 
+una confirmacion si realmente queremos eliminar la cuenta , si apretamos si se cancela , pero si apretamos si 
+![image](https://github.com/user-attachments/assets/9ec7f388-9a8f-4552-b7ef-12d5249297be)
 
-
+nos da un error que nos dice que no se ha podido elimnar la cuenta, esta parte no funciono correctamnete.
+![image](https://github.com/user-attachments/assets/8a0881dc-94c6-42b5-820d-eac817095641)
 
 
 
