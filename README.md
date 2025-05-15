@@ -122,6 +122,25 @@ nos da un error que nos dice que no se ha podido elimnar la cuenta, esta parte n
 
 
 
+## Creacion de torneo.
 
+![image](https://github.com/user-attachments/assets/97d29644-f71b-4d36-b200-1ff348a7fd4d)
+
+
+Pasamo a la creacion de toreno con la siguiente informacion : 
+
+![image](https://github.com/user-attachments/assets/efe4af33-a79e-4e0f-9e86-a7e081f14fd2)
+
+Hacemos click en crear torneo, y nos aparecera lo siguiente : 
+
+![image](https://github.com/user-attachments/assets/ef7e1dc1-d65b-4cbf-9830-4a8b7802a2f6)
+
+vamos a torneos activos y nos aparecera esa información : 
+
+![image](https://github.com/user-attachments/assets/4967b89c-1ee6-4dba-a96d-24d6c84adaeb)
+
+Hacemos la comprobacion en la bbdd para que se haya creado correctamente: 
+Vemos que se crea correctamente : 
+![image](https://github.com/user-attachments/assets/90381054-642b-4c54-b7cc-f8c67d59c785)
 
 
