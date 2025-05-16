@@ -132,7 +132,7 @@ nav {
 }
 
 /* Sección de Configuración */
-.config-opciones {
+/* .config-opciones {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -149,7 +149,7 @@ nav {
 
 .columna h2 {
     margin-bottom: 10px;
-}
+} */
 
 /* Pie de página */
 footer {
@@ -243,14 +243,94 @@ footer {
     margin: 0 10px;
 }
 
-/*Cambiar foto de perfil */
-.container {
-    background-color: white;
-    padding: 20px;
-    width: 80%;
-    text-align: center;
-    margin: auto;
+/* config */
+.config-opciones {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
 }
+
+/* Columnas */
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 250px;
+}
+
+/* Panel contenedor */
+.panel {
+  background-color: #0B0B45;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #FFC30055;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Títulos */
+.panel h2 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #FFC300;
+  text-align: center;
+}
+
+/* Botones generales */
+.panel-btn {
+  background-color: #FFC300;
+  color: #0B0B45;
+  font-weight: bold;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.panel-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Botón eliminar */
+.boton.eliminar {
+  background-color: #FF3B3F;
+  color: white;
+}
+
+.boton.eliminar:hover {
+  background-color: #cc0000;
+}
+
+/* Selector estilizado */
+.pane-select {
+  background-color: #FFC300;
+  color: #0B0B45;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  box-shadow: inset 0 0 5px #00000022;
+  text-align: center;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* fin config */
+
+
+
+
 
 /* Estilos del encabezado */
 .header {

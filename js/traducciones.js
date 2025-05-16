@@ -2,6 +2,8 @@
     // Definimos los textos en diferentes idiomas
     const traducciones = {
          ca: {
+    idnombre : "NOMBRE",
+    fotoid:"FOTO",
     tituloBienvenida: "BENVINGUTS A TURNONAUTA",
     btnResumenPerfil: "RESUM PERFIL",
     btnTorneosActivos: "TORNEJOS ACTIUS",
@@ -61,6 +63,7 @@
     ranking: "Classificació",
   },
   es: {
+    idnombre : "NAME",
     tituloBienvenida: "BIENVENIDOS A TURNONAUTA",
     btnResumenPerfil: "RESUMEN PERFIL",
     btnTorneosActivos: "TORNEOS ACTIVOS",
@@ -118,8 +121,10 @@
     labelDataInici: "Fecha de inicio",
     labelDataFinal: "Fecha final",
     ranking: "Clasificación",
+     fotoid:"FOTO",
   },
   en: {
+    idnombre : "NAME",
     tituloBienvenida: "WELCOME TO TURNONAUTA",
     btnResumenPerfil: "PROFILE SUMMARY",
     btnTorneosActivos: "ACTIVE TOURNAMENTS",
@@ -177,8 +182,10 @@
     labelDataInici: "Start date",
     labelDataFinal: "End date",
     ranking: "Ranking",
+     fotoid:"PHOTO",
   },
   fr: {
+    idnombre: "nom",
     tituloBienvenida: "BIENVENUE À TURNONAUTA",
     btnResumenPerfil: "RÉSUMÉ DU PROFIL",
     btnTorneosActivos: "TOURNOIS ACTIFS",
@@ -236,6 +243,7 @@
     labelDataInici: "Date de début",
     labelDataFinal: "Date de fin",
     ranking: "Classement",
+     fotoid:"PHOTO",
   }
     };
 
@@ -246,6 +254,7 @@
         document.getElementById("btnTorneosFinalizados").textContent = traducciones[idioma].btnTorneosFinalizados;
         document.getElementById("btnConfiguracion").textContent = traducciones[idioma].btnConfiguracion;
         document.getElementById("btnCrearTorneo").textContent = traducciones[idioma].btnCrearTorneo;
+        document.getElementById("fotoid").textContent = traducciones[idioma].fotoid;
 
         document.getElementById("tituloRecuperarContrasena").textContent = traducciones[idioma].tituloRecuperarContrasena;
         document.getElementById("inputCorreoRecuperar").placeholder = traducciones[idioma].inputCorreoRecuperar;
@@ -278,7 +287,7 @@
         document.getElementById("espa").textContent = traducciones[idioma].espa;
         document.getElementById("franc").textContent = traducciones[idioma].franc;
         document.getElementById("ingl").textContent = traducciones[idioma].ingl;
-        document.getElementById("idiomas").textContent = traducciones[idioma].idiomas;
+        // document.getElementById("idiomas").textContent = traducciones[idioma].idiomas;
         document.getElementById("idnombre").textContent = traducciones[idioma].idnombre;
         document.getElementById("cambNombre").textContent = traducciones[idioma].cambNombre;
         document.getElementById("soyvi").textContent = traducciones[idioma].soyvi;

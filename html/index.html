@@ -126,48 +126,40 @@
         </section>
 
         <!-- Sección de Configuración -->
-        <section id="config" class="seccion oculto">
-            <div class="config-opciones">
-                <div class="columna">
-                    <h2 id="idiomas" >IDIOMA</h2>
-                    <!-- <button class="boton activo">ESPAÑOL</button> -->
-                    <select id="selectorIdioma">
-                        <option id="cata" value="ca">Català</option>
-                        <option id="espa" value="es">Español</option>
-                        <option id ="franc" value="fr">Frances</option>
-                        <option id="ingl" value="en">Ingles</option>
-                    </select>
+ <section id="config" class="seccion oculto">
+  <div class="config-opciones">
+    <!-- Columna izquierda -->
+    <div class="columna">
+      <div class="panel">
+        <h2 id="idiomas">IDIOMA</h2>
+        <select id="selectorIdioma" class="pane-select">
+          <option id="cata" value="ca">Català</option>
+          <option id="espa" value="es">Español</option>
+          <option id="franc" value="fr">Francès</option>
+          <option id="ingl" value="en">Anglès</option>
+        </select>
+      </div>
 
-                    <h2 id="idnombre">NOMBRE</h2>
-                    <button id="cambNombre" class="boton">Cambiar nombre</button>
+      <div class="panel">
+        <h2 id="idnombre">NOMBRE</h2>
+        <button id="cambNombre" class="boton panel-btn">Cambiar nombre</button>
+      </div>
+    </div>
 
-                    <h2>FOTO</h2>
-                    <button id="btnCambiarFoto">Cambiar Foto</button>
-                </div>
+    <!-- Columna derecha -->
+    <div class="columna">
+      <div class="panel">
+        <h2 id="fotoid">FOTO</h2>
+        <button id="btnCambiarFoto" class="boton panel-btn">Cambiar Foto</button>
+      </div>
 
-                <div class="columna">
-                    <h2 id="soyvi">SONIDO Y VIBRACIONES</h2>
-
-                    <div class="container"> 
-                        <div class="pane">
-                            <label class="label yes">
-                                <span id="yes">Yes</span>
-                                <input id="left" class="input" name="radio" type="radio">
-                            </label>
-                            <label class="label no">
-                                <span id="not">No</span>
-                                <input id="middle" class="input" checked="checked" name="radio" type="radio">
-                            </label>
-                        </div>
-                    </div>
-                    
-                   
-
-                    <h2 id="cuenta">CUENTA</h2>
-                    <button id="btnEliminarCuenta" class="boton eliminar">Eliminar cuenta</button>
-                </div>
-            </div>
-        </section>
+      <div class="panel">
+        <h2 id="cuenta">CUENTA</h2>
+        <button id="btnEliminarCuenta" class="boton eliminar panel-btn">Eliminar cuenta</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Sección de Cambiar foto -->
 
@@ -249,78 +241,84 @@
 </section>
 
 
-<section id="CrearTorneig" class="seccion oculto centrada">
-  <div class="form-wrapper">
-    <div class="container">
-      <!-- Columna 1 -->
-      <div class="box">
+<section id="CrearTorneig" class="seccion oculto"> 
+    <div class="container" style="display: flex; gap: 20px;">
+      <!-- Sección 1 -->
+      <section class="box" style="flex: 1;">
         <div class="input-group">
-          <label for="tournament-name">Nom del Torneig:</label>
-          <input type="text" class="input-field" id="tournament-name" placeholder="Escriu el nom del torneig">
+          <label id="nombreTorneig">Nom del Torneig:</label>
+          <input type="text" class="input-field" id="tournament-name" value="Escriu el nom del torneig">
         </div>
-
+  
         <div class="input-group">
-          <label>Joc:</label>
+          <label id="labelJoc">Joc:</label>
           <div class="radio-group">
-            <label><input type="radio" name="game" id="magic"> Magic</label>
-            <label><input type="radio" name="game" id="pokemon"> Pokémon</label>
+            <input type="radio" name="game" id="magic">
+            <label for="magic">Magic</label>
+            <input type="radio" name="game" id="pokemon">
+            <label for="pokemon">Pokémon</label>
           </div>
         </div>
-
+  
         <div class="input-group">
-          <label>Competitiu:</label>
+          <label id="labelCompe">Competitiu:</label>
           <div class="radio-group">
-            <label><input type="radio" name="competitive" id="yes"> Sí</label>
-            <label><input type="radio" name="competitive" id="no"> No</label>
+            <input type="radio" name="competitive" id="yes">
+            <label for="yes">Sí</label>
+            <input type="radio" name="competitive" id="no">
+            <label for="no">No</label>
           </div>
         </div>
-
+  
         <div class="input-group">
           <label>Format:</label>
           <div class="radio-group">
-            <label><input type="radio" name="format" id="suis"> Suís</label>
-            <label><input type="radio" name="format" id="elimination"> Eliminatòria</label>
+            <input type="radio" name="format" id="suis">
+            <label for="suis">Suís</label>
+            <input type="radio" name="format" id="elimination">
+            <label for="elimination">Eliminatoria</label>
           </div>
         </div>
-      </div>
-
-      <!-- Columna 2 -->
-      <div class="box">
+      </section>
+  
+      <!-- Sección 2 -->
+      <section class="box" style="flex: 1;">
         <div class="input-group">
-          <label>Virtual:</label>
+          <label id="virtual">Virtual:</label>
           <div class="radio-group">
-            <label><input type="radio" name="virtual" id="virtual-yes"> Sí</label>
-            <label><input type="radio" name="virtual" id="virtual-no"> No</label>
+            <input type="radio" name="virtual" id="virtual-yes">
+            <label for="virtual-yes">Sí</label>
+            <input type="radio" name="virtual" id="virtual-no">
+            <label for="virtual-no">No</label>
           </div>
         </div>
-
+  
         <div class="input-group">
-          <label for="matches-per-round">Número de jugadors:</label>
-          <input type="number" id="matches-per-round" value="4" min="2" max="16" class="input-field">
-        </div>
-
+            <label id="labelpartidas">Numero jugadores:</label>
+            <input type="number" id="matches-per-round" value="4" min="2" max="16">
+          </div>
+  
         <div class="input-group">
-          <label for="tournament-prize">Premi:</label>
-          <input type="text" id="tournament-prize" placeholder="Premi en metàl·lic" class="input-field">
+          <label id="premi">Premi:</label>
+          <input type="text" id="tournament-prize" value="Premi en Metàl·lic">
         </div>
-
+  
         <div class="input-group">
-          <label for="start-date">Data d'inici:</label>
-          <input type="date" id="start-date" class="input-field">
+          <label>Data d'inici:</label>
+          <input type="date" id="start-date" >
         </div>
-
+  
         <div class="input-group">
-          <label for="end-date">Data final:</label>
-          <input type="date" id="end-date" class="input-field">
+          <label>Data final:</label>
+          <input type="date" id="end-date">
         </div>
-      </div>
+      </section>
     </div>
-
-    <div class="form-footer">
-      <button class="button confirm" onclick="createTournament()">Crear Torneig</button>
+  
+    <div style="text-align:center; margin-top:20px;">
+      <button onclick="createTournament()">Crear Torneig</button>
     </div>
-  </div>
-</section>
+  </section>
 
     </main>
 
