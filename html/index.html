@@ -249,84 +249,78 @@
 </section>
 
 
-<section id="CrearTorneig" class="seccion oculto"> 
-    <div class="container" style="display: flex; gap: 20px;">
-      <!-- Sección 1 -->
-      <section class="box" style="flex: 1;">
+<section id="CrearTorneig" class="seccion oculto centrada">
+  <div class="form-wrapper">
+    <div class="container">
+      <!-- Columna 1 -->
+      <div class="box">
         <div class="input-group">
-          <label id="nombreTorneig">Nom del Torneig:</label>
-          <input type="text" class="input-field" id="tournament-name" value="Escriu el nom del torneig">
+          <label for="tournament-name">Nom del Torneig:</label>
+          <input type="text" class="input-field" id="tournament-name" placeholder="Escriu el nom del torneig">
         </div>
-  
+
         <div class="input-group">
-          <label id="labelJoc">Joc:</label>
+          <label>Joc:</label>
           <div class="radio-group">
-            <input type="radio" name="game" id="magic">
-            <label for="magic">Magic</label>
-            <input type="radio" name="game" id="pokemon">
-            <label for="pokemon">Pokémon</label>
+            <label><input type="radio" name="game" id="magic"> Magic</label>
+            <label><input type="radio" name="game" id="pokemon"> Pokémon</label>
           </div>
         </div>
-  
+
         <div class="input-group">
-          <label id="labelCompe">Competitiu:</label>
+          <label>Competitiu:</label>
           <div class="radio-group">
-            <input type="radio" name="competitive" id="yes">
-            <label for="yes">Sí</label>
-            <input type="radio" name="competitive" id="no">
-            <label for="no">No</label>
+            <label><input type="radio" name="competitive" id="yes"> Sí</label>
+            <label><input type="radio" name="competitive" id="no"> No</label>
           </div>
         </div>
-  
+
         <div class="input-group">
           <label>Format:</label>
           <div class="radio-group">
-            <input type="radio" name="format" id="suis">
-            <label for="suis">Suís</label>
-            <input type="radio" name="format" id="elimination">
-            <label for="elimination">Eliminatoria</label>
+            <label><input type="radio" name="format" id="suis"> Suís</label>
+            <label><input type="radio" name="format" id="elimination"> Eliminatòria</label>
           </div>
         </div>
-      </section>
-  
-      <!-- Sección 2 -->
-      <section class="box" style="flex: 1;">
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="box">
         <div class="input-group">
-          <label id="virtual">Virtual:</label>
+          <label>Virtual:</label>
           <div class="radio-group">
-            <input type="radio" name="virtual" id="virtual-yes">
-            <label for="virtual-yes">Sí</label>
-            <input type="radio" name="virtual" id="virtual-no">
-            <label for="virtual-no">No</label>
+            <label><input type="radio" name="virtual" id="virtual-yes"> Sí</label>
+            <label><input type="radio" name="virtual" id="virtual-no"> No</label>
           </div>
         </div>
-  
+
         <div class="input-group">
-            <label id="labelpartidas">Numero jugadores:</label>
-            <input type="number" id="matches-per-round" value="4" min="2" max="16">
-          </div>
-  
-        <div class="input-group">
-          <label id="premi">Premi:</label>
-          <input type="text" id="tournament-prize" value="Premi en Metàl·lic">
+          <label for="matches-per-round">Número de jugadors:</label>
+          <input type="number" id="matches-per-round" value="4" min="2" max="16" class="input-field">
         </div>
-  
+
         <div class="input-group">
-          <label>Data d'inici:</label>
-          <input type="date" id="start-date" >
+          <label for="tournament-prize">Premi:</label>
+          <input type="text" id="tournament-prize" placeholder="Premi en metàl·lic" class="input-field">
         </div>
-  
+
         <div class="input-group">
-          <label>Data final:</label>
-          <input type="date" id="end-date">
+          <label for="start-date">Data d'inici:</label>
+          <input type="date" id="start-date" class="input-field">
         </div>
-      </section>
+
+        <div class="input-group">
+          <label for="end-date">Data final:</label>
+          <input type="date" id="end-date" class="input-field">
+        </div>
+      </div>
     </div>
-  
-    <div style="text-align:center; margin-top:20px;">
-      <button onclick="createTournament()">Crear Torneig</button>
+
+    <div class="form-footer">
+      <button class="button confirm" onclick="createTournament()">Crear Torneig</button>
     </div>
-  </section>
+  </div>
+</section>
 
     </main>
 

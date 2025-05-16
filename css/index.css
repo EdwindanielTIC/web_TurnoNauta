@@ -1,4 +1,5 @@
 /* Reset básico */
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -6,10 +7,26 @@
 }
 
 /* Estilo general */
-body {
+html, body {
     background-color: #f4f4f4;
     color: #333;
     text-align: center;
+      height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+   flex: 1;
+  display: flex;
+  justify-content: center;   /* Centrado horizontal */
+  align-items: center; 
 }
 
 /* Base classes for showing/hiding sections */
